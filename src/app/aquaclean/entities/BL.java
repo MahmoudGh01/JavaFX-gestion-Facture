@@ -16,7 +16,7 @@ public class BL {
     private int id ;
     private Client client;
     public List<ProduitBL> produits;
-    private float totale;
+    private double totale;
     private Date date_bl;
 
     public BL() {
@@ -51,11 +51,11 @@ public class BL {
         this.produits = produits;
     }
 
-    public float getTotale() {
+    public double getTotale() {
         return totale;
     }
 
-    public void setTotale(float totale) {
+    public void setTotale(double totale) {
         this.totale = totale;
     }
 
@@ -67,14 +67,14 @@ public class BL {
         this.date_bl = date_bl;
     }
 
-    public BL(Client client, List<ProduitBL> produits, float totale, Date date_bl) {
+    public BL(Client client, List<ProduitBL> produits, double totale, Date date_bl) {
         this.client = client;
         this.produits = produits;
         this.totale = totale;
         this.date_bl = date_bl;
     }
 
-    public BL(int id, Client client, List<ProduitBL> produits, float totale, Date date_bl) {
+    public BL(int id, Client client, List<ProduitBL> produits, double totale, Date date_bl) {
         this.id = id;
         this.client = client;
         this.produits = produits;

@@ -20,21 +20,24 @@ import java.util.List;
  * @author user
  */
 public class ProduitBLCRUD {
-     public void ajouterProduitBL(ProduitBL c){
+     
+    public void ajouterProduitBL(List<ProduitBL> PBL ,int B){
         try {
-            String requete="INSERT INTO ProduitBL(qte,Id_Produit,Id_BL)Values(?,?,?,?)";
+            String requete="INSERT INTO ProduitBL(qte,Id_BL,Id_Produit,PU)Values(?,?,?,?)";
             
             PreparedStatement pst= MyConnection.getInstance().getCnx().prepareStatement(requete);
         
-            
+             for (ProduitBL c : PBL) {
         pst.setInt(1, c.getQte());
-        pst.setString(2, c.getProduit().getName());
-        pst.setInt(3, c.getId_BL());
+        pst.setInt(3, c.getProduit().getId());
+        pst.setInt(2, B);
+        pst.setDouble(4, c.getProduit().getPrix());
         
        
         
         pst.executeUpdate();
-            System.out.println("elemenT AJOUTEEEEE");
+             }
+            System.out.println("FactureItems AJOUTEEEEE");
         
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());        
@@ -70,8 +73,10 @@ public class ProduitBLCRUD {
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-   return mylist;}
-     public void deleteProduitBL(ProduitBL C) {
+   return mylist;
+    }
+     
+    public void deleteProduitBL(ProduitBL C) {
       String requete = "DELETE FROM ProduitBL WHERE id=?";
  
         try {

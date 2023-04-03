@@ -20,7 +20,7 @@
                   <Font size="28.0" />
                </font>
             </Label>
-            <DatePicker fx:id="Date" layoutX="536.0" layoutY="32.0" prefHeight="34.0" prefWidth="215.0" />
+            <DatePicker fx:id="datepck" layoutX="536.0" layoutY="32.0" prefHeight="34.0" prefWidth="215.0" />
             <Button fx:id="btnAdd" layoutX="536.0" layoutY="106.0" mnemonicParsing="false" onAction="#btnAdd" prefHeight="21.0" prefWidth="42.0" text="+">
                <font>
                   <Font name="System Bold" size="16.0" />

@@ -93,5 +93,21 @@ public class ClientCRUD {
             System.out.println(ex.getMessage());            
         }
     }
+
+    public Client getClientById(int clientId) {
+    Client client = null;
+    try {
+        String query = "SELECT * FROM Client WHERE id = ?";
+        PreparedStatement statement = MyConnection.getInstance().getCnx().prepareStatement(query);
+        statement.setInt(1, clientId);
+        ResultSet resultSet = statement.executeQuery();
+        if (resultSet.next()) {
+            client = new Client(resultSet.getInt("id"), resultSet.getString("Name"), resultSet.getString("MF"), resultSet.getString("Adresse"));
+        }
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
+    }
+    return client;
+}
     
 }
