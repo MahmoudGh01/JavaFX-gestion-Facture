@@ -74,12 +74,13 @@ public class BLCRUD {
 }
 
      public void deleteBL(BL C) {
-      String requete = "DELETE FROM BL WHERE id=?";
+      String requete = "DELETE FROM BL WHERE id= ?";
  
         try {
             PreparedStatement statement = MyConnection.getInstance().getCnx().prepareStatement(requete);
             statement.setInt(1,C.getId());
             statement.executeUpdate();
+            System.out.println("BL supprimée!");
         } catch (SQLException ex) {
             //Logger.getLogger(ClientService.class.getName()).log(Level.SEVERE, null, ex);
         }

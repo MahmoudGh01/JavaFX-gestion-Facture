@@ -26,6 +26,8 @@ import javax.swing.ImageIcon;
  */
 public class NewFXMain extends Application {
     
+    public static String Path="../Bon de livraison/";
+
     public static Stage _stage;
     public static NewFXMain _self;
     @Override
@@ -56,7 +58,7 @@ public class NewFXMain extends Application {
     {
         try {
             Parent root = FXMLLoader.load(_self.getClass().getResource(sceneName + ".fxml"));
-            //Parent root = FXMLLoader.load(getClass().getResource("InterfaceAdmin.fxml"));
+            
 
             Scene scene = new Scene(root);
             _stage.setScene(scene);

@@ -10,12 +10,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="bp" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="971.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.aquaclean.views.HomeController">
+<BorderPane fx:id="bp" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="852.0" prefWidth="1360.0" stylesheets="@../../../../Stylesheet.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.aquaclean.views.HomeController">
    <top>
       <HBox cache="true" focusTraversable="true" prefHeight="67.0" prefWidth="971.0">
          <children>
             <Button fx:id="Produit" mnemonicParsing="false" onMouseClicked="#Produit" prefHeight="62.0" prefWidth="256.0" text="Produit" />
             <Button fx:id="Client" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#Client" prefHeight="62.0" prefWidth="256.0" text="Client" />
+            <Button fx:id="Home" layoutX="266.0" layoutY="10.0" mnemonicParsing="false" onAction="#home" prefHeight="62.0" prefWidth="335.0" text="Home" />
             <Button fx:id="BL" layoutX="266.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#BL" prefHeight="62.0" prefWidth="256.0" text="BL" />
             <Button fx:id="Facture" layoutX="490.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#Facture" prefHeight="62.0" prefWidth="256.0" text="Facture" />
          </children>
@@ -31,12 +32,13 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TableView fx:id="TblBL" prefHeight="330.0" prefWidth="508.0">
+                  <TableView fx:id="TblBL" prefHeight="696.0" prefWidth="635.0">
                     <columns>
                       <TableColumn fx:id="B_Id_Col" prefWidth="40.00000149011612" text="ID" />
                       <TableColumn fx:id="B_Client_Col" prefWidth="179.20000457763672" text="Client" />
                         <TableColumn fx:id="B_Date_Col" minWidth="0.0" prefWidth="138.39999389648438" text="Date" />
-                        <TableColumn fx:id="B_Action_Col" prefWidth="123.20001220703125" text="Action" />
+                        <TableColumn fx:id="B_Montant" prefWidth="75.0" text="Montant" />
+                        <TableColumn fx:id="B_Action_Col" prefWidth="75.0" text="Action" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -51,12 +53,13 @@
                         <Font size="21.0" />
                      </font>
                   </Label>
-                  <TableView fx:id="TblF" prefHeight="330.0" prefWidth="503.0">
+                  <TableView fx:id="TblF" prefHeight="699.0" prefWidth="635.0">
                      <columns>
                         <TableColumn fx:id="F_Id_Col" prefWidth="40.00000149011612" text="ID" />
-                        <TableColumn fx:id="F_Client_Col" prefWidth="179.20000457763672" text="Client" />
-                        <TableColumn fx:id="F_Date_Col" minWidth="0.0" prefWidth="138.39999389648438" text="Date" />
-                        <TableColumn fx:id="F_Action_Col" prefWidth="123.20001220703125" text="Action" />
+                        <TableColumn fx:id="F_Client_Col" prefWidth="215.20001220703125" text="Client" />
+                        <TableColumn fx:id="F_Date_Col" minWidth="0.0" prefWidth="152.0001220703125" text="Date" />
+                        <TableColumn fx:id="Montant" prefWidth="179.9998779296875" text="Montant" />
+                        <TableColumn fx:id="F_Action_Col" prefWidth="75.0" text="Action" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

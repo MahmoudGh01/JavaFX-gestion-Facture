@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.aquaclean.views.BLNewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.aquaclean.views.BLNewController">
    <top>
       <AnchorPane prefHeight="173.0" prefWidth="830.0" BorderPane.alignment="CENTER">
          <children>
@@ -41,9 +41,10 @@
       <TableView fx:id="Tbv" prefHeight="306.0" prefWidth="830.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="QteCol" prefWidth="93.60000306367874" text="QTE" />
-          <TableColumn fx:id="ProduitCol" prefWidth="438.3999786376953" text="Produit" />
-            <TableColumn fx:id="PUCol" prefWidth="133.59991455078125" text="P.Unitaire" />
-            <TableColumn fx:id="PTCol" prefWidth="164.00006103515625" text="Prix Totale" />
+          <TableColumn fx:id="ProduitCol" prefWidth="404.00001525878906" text="Produit" />
+            <TableColumn fx:id="PUCol" prefWidth="104.0" text="P.Unitaire" />
+            <TableColumn fx:id="PTCol" prefWidth="145.60003662109375" text="Prix Totale" />
+            <TableColumn fx:id="Action_col" />
         </columns>
       </TableView>
    </center>

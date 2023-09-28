@@ -3,20 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/AquaClean/src/app/aquaclean/views/BLNewController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/AquaClean/src/app/aquaclean/entities/Facture.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/AquaClean/src/app/aquaclean/services/ClientCRUD.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/AquaClean/src/app/aquaclean/views/HomeController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/AquaClean/src/app/aquaclean/entities/Produits.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/AquaClean/src/app/aquaclean/entities/BL.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/AquaClean/src/app/aquaclean/services/BLCRUD.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/AquaClean/src/app/aquaclean/views/ProduitController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/AquaClean/src/app/aquaclean/views/NewFXMain.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/AquaClean/src/app/aquaclean/entities/ProduitBL.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/AquaClean/src/app/aquaclean/views/ClientController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/AquaClean/src/app/aquaclean/entities/Client.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/AquaClean/src/app/aquaclean/services/ProduitsCRUD.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/AquaClean/src/app/aquaclean/services/ProduitBLCRUD.java</file>
+            <file>file:/C:/Users/mahmo/Downloads/wetransfer_javafx-gestion-facture-main_2023-09-16_1601/JavaFX-gestion-Facture-main/src/app/aquaclean/views/BLNewController.java</file>
+            <file>file:/C:/Users/mahmo/Downloads/wetransfer_javafx-gestion-facture-main_2023-09-16_1601/JavaFX-gestion-Facture-main/src/app/aquaclean/entities/ProduitBL.java</file>
+            <file>file:/C:/Users/mahmo/Downloads/wetransfer_javafx-gestion-facture-main_2023-09-16_1601/JavaFX-gestion-Facture-main/src/app/aquaclean/entities/Client.java</file>
+            <file>file:/C:/Users/mahmo/Downloads/wetransfer_javafx-gestion-facture-main_2023-09-16_1601/JavaFX-gestion-Facture-main/src/app/aquaclean/views/HomeController.java</file>
+            <file>file:/C:/Users/mahmo/Downloads/wetransfer_javafx-gestion-facture-main_2023-09-16_1601/JavaFX-gestion-Facture-main/src/app/aquaclean/tools/MyConnection.java</file>
+            <file>file:/C:/Users/mahmo/Downloads/wetransfer_javafx-gestion-facture-main_2023-09-16_1601/JavaFX-gestion-Facture-main/src/app/aquaclean/services/ProduitBLCRUD.java</file>
+            <file>file:/C:/Users/mahmo/Downloads/wetransfer_javafx-gestion-facture-main_2023-09-16_1601/JavaFX-gestion-Facture-main/src/app/aquaclean/views/NewFXMain.java</file>
+            <file>file:/C:/Users/mahmo/Downloads/wetransfer_javafx-gestion-facture-main_2023-09-16_1601/JavaFX-gestion-Facture-main/src/app/aquaclean/views/FactureController.java</file>
+            <file>file:/C:/Users/mahmo/Downloads/wetransfer_javafx-gestion-facture-main_2023-09-16_1601/JavaFX-gestion-Facture-main/src/app/aquaclean/services/FactureCRUD.java</file>
         </group>
     </open-files>
 </project-private>

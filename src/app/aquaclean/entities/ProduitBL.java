@@ -11,35 +11,42 @@ package app.aquaclean.entities;
  */
 public class ProduitBL {
     private int id,Qte,Id_BL;
-    private Produits Produit;
-
-    public ProduitBL(int id, int Qte, int Id_BL, Produits Produit) {
-        this.id = id;
-        this.Qte = Qte;
-        this.Id_BL = Id_BL;
-        this.Produit = Produit;
-    }
-
-    public ProduitBL(int Qte, int Id_BL, Produits Produit) {
-        this.Qte = Qte;
-        this.Id_BL = Id_BL;
-        this.Produit = Produit;
-    }
-
-    public ProduitBL(int Qte, Produits Produit) {
-        this.Qte = Qte;
-        this.Produit = Produit;
-    }
-
-   
-
-    @Override
-    public String toString() {
-        return "ProduitBL{" + "id=" + id + ", Qte=" + Qte + ", Id_BL=" + Id_BL + ", Produit=" + Produit + '}';
-    }
+    private int id_Produit;
+    private String NomP;
+    private double PU;
+    private int ID_Invoice;
 
     public ProduitBL() {
     }
+
+    public ProduitBL(int id, int Qte, int Id_BL, int id_Produit, String NomP, double PU) {
+        this.id = id;
+        this.Qte = Qte;
+        this.Id_BL = Id_BL;
+        this.id_Produit = id_Produit;
+        this.NomP = NomP;
+        this.PU = PU;
+    }
+
+    public ProduitBL(int Qte, int id_Produit, String NomP, double PU) {
+        this.Qte = Qte;
+        
+        this.id_Produit = id_Produit;
+        this.NomP = NomP;
+        this.PU = PU;
+    }
+    
+    
+    public int getInvoice_Id()
+    {
+        return ID_Invoice;
+    }
+
+    public void setInvoice_Id(int ID_Invoice)
+    {
+        this.ID_Invoice = ID_Invoice;
+    }
+    
 
     public int getId() {
         return id;
@@ -65,13 +72,36 @@ public class ProduitBL {
         this.Id_BL = Id_BL;
     }
 
-    public Produits getProduit() {
-        return Produit;
+    public int getId_Produit() {
+        return id_Produit;
     }
 
-    public void setProduit(Produits Produit) {
-        this.Produit = Produit;
+    public void setId_Produit(int id_Produit) {
+        this.id_Produit = id_Produit;
     }
+
+    public String getNomP() {
+        return NomP;
+    }
+
+    public void setNomP(String NomP) {
+        this.NomP = NomP;
+    }
+
+    public double getPU() {
+        return PU;
+    }
+
+    public void setPU(double PU) {
+        this.PU = PU;
+    }
+
+    @Override
+    public String toString() {
+        return "ProduitBL{" + "id=" + id + ", Qte=" + Qte + ", Id_BL=" + Id_BL + ", id_Produit=" + id_Produit + ", NomP=" + NomP + ", PU=" + PU + '}';
+    }
+
+  
 
    
 
