@@ -68,11 +68,15 @@ public class ProduitController implements Initializable {
 
     @FXML
     private void btnUpdate(ActionEvent event) {
-        TvP.getSelectionModel().getSelectedItem();
+        ProduitsCRUD cc =new ProduitsCRUD();
+        cc.modifierProduits(TvP.getSelectionModel().getSelectedItem());
     }
 
     @FXML
     private void btnDelete(ActionEvent event) {
+         ProduitsCRUD cc =new ProduitsCRUD();
+        cc.deleteProduits(TvP.getSelectionModel().getSelectedItem());
+
 
     }
     

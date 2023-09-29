@@ -72,10 +72,18 @@ public class ClientController implements Initializable {
 
     @FXML
     private void btnUpdate(ActionEvent event) {
+         ClientCRUD cc =new ClientCRUD();
+        cc.modifierClient(TbV.getSelectionModel().getSelectedItem());
+
     }
 
     @FXML
     private void btnDelete(ActionEvent event) {
+        
+        
+        ClientCRUD cc =new ClientCRUD();
+        cc.deleteClient(TbV.getSelectionModel().getSelectedItem());
+
     }
     private void ShowClient() {
         ClientCRUD P = new ClientCRUD();
