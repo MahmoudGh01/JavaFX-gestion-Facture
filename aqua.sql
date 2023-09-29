@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 20, 2023 at 03:34 PM
+-- Host: localhost
+-- Generation Time: Sep 29, 2023 at 06:50 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `aqua`
+-- Database: `Aqua`
 --
 
 -- --------------------------------------------------------
@@ -33,20 +33,6 @@ CREATE TABLE `bl` (
   `Totale` double NOT NULL,
   `Date_BL` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `bl`
---
-
-INSERT INTO `bl` (`id`, `Id_Client`, `Totale`, `Date_BL`) VALUES
-(1, 1, 7.699999999999999, '2023-08-25'),
-(2, 1, 12177, '2023-08-19'),
-(3, 1, 34.65, '2023-08-12'),
-(4, 1, 3.15, '2023-08-19'),
-(5, 1, 2.8, '2023-08-10'),
-(6, 1, 3.15, '2023-08-19'),
-(7, 1, 30.799999999999997, '2023-09-28'),
-(8, 1, 5436.75, '2023-09-20');
 
 -- --------------------------------------------------------
 
@@ -67,6 +53,19 @@ CREATE TABLE `client` (
 
 INSERT INTO `client` (`id`, `Name`, `MF`, `Adresse`) VALUES
 (1, 'Dar Zaghouan', '1234567', 'Zaghouan');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `facture`
+--
+
+CREATE TABLE `facture` (
+  `id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `net` double NOT NULL,
+  `id_client` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -110,10 +109,50 @@ CREATE TABLE `produitbl` (
 --
 
 INSERT INTO `produitbl` (`id`, `Qte`, `Id_BL`, `Nom`, `PU`, `id_produit`) VALUES
-(4, 9, 6, 'Drap de bain', 0.35, 3),
-(5, 88, 7, 'Drap de bain', 0.35, 3),
-(6, 55, 8, 'Tapis de Bain', 0.45, 4),
-(7, 44, 8, 'Drap', 123, 2);
+(8, 12, 9, 'Tapis de Bain', 0.45, 4),
+(9, 2, 9, 'Drap', 123, 1),
+(10, 23, 10, 'Tapis de Bain', 0.45, 4),
+(11, 9, 11, 'Tapis de Bain', 0.45, 4),
+(12, 11, 12, 'Tapis de Bain', 0.45, 4),
+(13, 11, 13, 'Drap de bain', 0.35, 3),
+(14, 1, 14, 'Drap de bain', 0.35, 3),
+(15, 12, 14, 'Tapis de Bain', 0.45, 4),
+(16, 11, 15, 'Tapis de Bain', 0.45, 4),
+(17, 11, 16, 'Drap de bain', 0.35, 3),
+(18, 11, 16, 'Drap de bain', 0.35, 3),
+(19, 11, 17, 'Drap de bain', 0.35, 3),
+(20, 11, 17, 'Drap de bain', 0.35, 3),
+(21, 11, 18, 'Drap de bain', 0.35, 3),
+(22, 11, 18, 'Drap de bain', 0.35, 3),
+(23, 11, 19, 'Drap de bain', 0.35, 3),
+(24, 11, 19, 'Drap de bain', 0.35, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ProduitFacture`
+--
+
+CREATE TABLE `ProduitFacture` (
+  `id` int(11) NOT NULL,
+  `qte` int(11) NOT NULL,
+  `Id_BL` int(11) NOT NULL,
+  `Id_Produit` int(11) NOT NULL,
+  `PU` double NOT NULL,
+  `Nom` text NOT NULL,
+  `Id_Facture` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `ProduitFacture`
+--
+
+INSERT INTO `ProduitFacture` (`id`, `qte`, `Id_BL`, `Id_Produit`, `PU`, `Nom`, `Id_Facture`) VALUES
+(1, 2, 9, 1, 123, 'Drap', 14),
+(2, 35, 9, 4, 0.45, 'Tapis de Bain', 14),
+(3, 20, 11, 4, 0.45, 'Tapis de Bain', 15),
+(4, 11, 13, 3, 0.35, 'Drap de bain', 16),
+(5, 20, 11, 4, 0.45, 'Tapis de Bain', 16);
 
 --
 -- Indexes for dumped tables
@@ -132,6 +171,12 @@ ALTER TABLE `client`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `facture`
+--
+ALTER TABLE `facture`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `produit`
 --
 ALTER TABLE `produit`
@@ -144,6 +189,12 @@ ALTER TABLE `produitbl`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `ProduitFacture`
+--
+ALTER TABLE `ProduitFacture`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -151,13 +202,19 @@ ALTER TABLE `produitbl`
 -- AUTO_INCREMENT for table `bl`
 --
 ALTER TABLE `bl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `facture`
+--
+ALTER TABLE `facture`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `produit`
@@ -169,7 +226,13 @@ ALTER TABLE `produit`
 -- AUTO_INCREMENT for table `produitbl`
 --
 ALTER TABLE `produitbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `ProduitFacture`
+--
+ALTER TABLE `ProduitFacture`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
