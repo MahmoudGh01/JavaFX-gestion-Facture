@@ -31,7 +31,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <ComboBox fx:id="CBClient" editable="true" layoutX="220.0" layoutY="31.0" prefHeight="41.0" prefWidth="298.0" />
+            <ComboBox fx:id="CBClient" layoutX="220.0" layoutY="31.0" prefHeight="41.0" prefWidth="298.0" />
          </children>
       </AnchorPane>
    </top>

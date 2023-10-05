@@ -20,10 +20,10 @@ import java.util.List;
  */
 public class FactureCRUD {
 
-    public void ajouterFacture(Facture invoice) {
+    public int ajouterFacture(Facture invoice) {
         ResultSet rs = null;
         ProduitBLCRUD PBL = new ProduitBLCRUD(); // Assuming you have a similar CRUD class for ProduitBL
-
+        int invoiceId = 0;
         try {
             String requete = "INSERT INTO Facture(Net, Date,Id_client) VALUES (?, ?,?)";
             PreparedStatement pst = MyConnection.getInstance().getCnx().prepareStatement(requete,
@@ -35,7 +35,7 @@ public class FactureCRUD {
             rs = pst.getGeneratedKeys();
 
             if (rs.next()) {
-                int invoiceId = rs.getInt(1);
+                 invoiceId = rs.getInt(1);
                 PBL.ajouterProduitBL(invoiceId, invoice.getProduits()); // Add associated ProduitBL items
             }
 
@@ -43,6 +43,7 @@ public class FactureCRUD {
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
+        return invoiceId;
     }
 
     public void deleteFacture(Facture C) {

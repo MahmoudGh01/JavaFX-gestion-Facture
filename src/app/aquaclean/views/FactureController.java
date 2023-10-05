@@ -198,11 +198,12 @@ public class FactureController implements Initializable {
         invoice.setDate(new Date(System.currentTimeMillis())); // Set the invoice date to the current date
         invoice.setNet(totalAmount);
         invoice.setProduits(mergedProduits);
+        invoice.setClient(CBClient.getSelectionModel().getSelectedItem());
         // Set any other relevant attributes for the invoice
         // Assuming you have an InvoiceCRUD service to manage invoices
         FactureCRUD invoiceCRUD = new FactureCRUD();
-        invoiceCRUD.ajouterFacture(invoice);
-
+       int  invoiceId=invoiceCRUD.ajouterFacture(invoice);
+        invoice.setId(invoiceId);
         // Generate the invoice PDF using the merged ProduitBL objects and the newly created invoice
     }
     
@@ -255,7 +256,7 @@ public class FactureController implements Initializable {
         
         invoice.setProduits(mergeSelectedBLs(selectedBLs));
         invoice.generateInvoicePDF(invoice);
-         Desktop.getDesktop().open(new File("invoice_imprime.pdf"));
+         //Desktop.getDesktop().open(new File("invoice_imprime.pdf"));
         
     }
     
